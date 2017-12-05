@@ -1,0 +1,63 @@
+header {
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    .header__brand {
+        width:200px;
+        height:50px;
+        float:left;
+        text-align:center;
+        background-color:#1c2b36;
+        transition:width 0.3s ease 0s;
+        img {
+            width:71px;
+        }
+        &.collapsed {
+            width:60px;
+            img {
+                width:60px;
+            }
+            + .header__collapsable {
+                margin-left:60px;
+            }
+        }
+    }
+    .header__collapsable {
+        margin-left:200px;
+        background-color:#fff;
+        box-shadow:0 2px 2px rgba(0,0,0,.05), 0 1px 0 rgba(0,0,0,.05);
+        padding:0 15px;
+        transition:margin-left 0.3s ease 0s;
+        button {
+            border:none;
+            margin:0;
+            padding:6px 12px;
+            margin:8px 0;
+            background:none;
+            span {
+                height:17px;
+                display: block;
+                position: relative;
+                border-top:1px solid #333;
+                margin:2px 0;
+                width:21px;
+                &:after,&:before {
+                    content:"";
+                    position:absolute;
+                    left:0;
+                    width:100%;
+                    height:1px;
+                    background-color:#333;
+                }
+                &:before {
+                    top:50%;
+                    margin-top:-1px;
+                }
+                &:after {
+                    bottom:0;
+                }
+            }
+        }
+    }
+}

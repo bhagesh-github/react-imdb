@@ -1,0 +1,35 @@
+.sidebar {
+  position: fixed;
+  left: 0;
+  top: 50px;
+  bottom: 0;
+  background-color: #1c2b36;
+  width: 200px;
+  text-align: left;
+  overflow: hidden;
+  transition: width 0.3s ease 0s;
+  white-space: nowrap; }
+  .sidebar ul {
+    padding: 0;
+    margin: 20px 0 0; }
+    .sidebar ul li a {
+      display: block;
+      padding: 10px 20px;
+      color: #869fb1;
+      font-size: 14px;
+      transition: background-color .2s ease-in-out 0s; }
+      .sidebar ul li a img {
+        margin-right: 5px;
+        width: 40px; }
+      .sidebar ul li a:hover, .sidebar ul li a.active {
+        background-color: #16232d; }
+  .sidebar.collapsed {
+    width: 60px; }
+    .sidebar.collapsed ul li a {
+      padding: 10px 0;
+      text-align: center; }
+      .sidebar.collapsed ul li a span {
+        display: none; }
+      .sidebar.collapsed ul li a img {
+        margin: 0;
+        width: 35px; }

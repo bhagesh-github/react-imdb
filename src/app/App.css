@@ -1,0 +1,19 @@
+.main-content {
+  margin: 50px 0 0 200px;
+  transition: margin-left 0.3s ease 0s; }
+  .main-content.collapsed {
+    margin-left: 60px; }
+
+.top-content {
+  padding: 20px; }
+
+.form-container {
+  width: 800px;
+  max-width: 90%;
+  margin: 0 auto;
+  padding: 50px 0; }
+
+.input-error {
+  display: block;
+  color: #a94442;
+  margin-top: 5px; }
