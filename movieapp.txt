@@ -1,0 +1,38 @@
+Movie
+title
+subtitle
+generes
+running time
+release date | coming soon
+synopsis
+directors array
+writers array
+stars array with charachter name
+thumbnail
+trailer video link
+media gallery
+
+
+Celebreties
+name
+specialities 
+synopsis
+dob
+country
+state
+city
+media gallery
+gender
+spouse array
+
+
+Pages
+listing page movies
+edit page movie
+add page movie
+detail page movie
+listing page artist
+detail page artist
+list page artist on state | date | year
+edit page artist
+add page artist
