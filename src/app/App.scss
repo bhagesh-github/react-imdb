@@ -19,6 +19,9 @@
     display:block;
     color:#a94442;
     margin-top:5px;
+    &.custom_style {
+        margin:-10px 0 15px 0;
+    }
 }
 .form-group {
     > label {

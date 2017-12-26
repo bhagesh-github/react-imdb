@@ -69,6 +69,7 @@ class AddMovie extends Component {
                             placeholder="Add directors"
                             component={renderMultiSelect}
                             textFeild={item => item}
+                            valueFeild={item => item}
                             data={[ 'Guitar', 'Cycling', 'Hiking' ]}
                         />
                         <Field
@@ -77,9 +78,10 @@ class AddMovie extends Component {
                             placeholder="Add writers"
                             component={renderMultiSelect}
                             textFeild={item => item}
+                            valueFeild={item => item}
                             data={[ 'Guitar', 'Cycling', 'Hiking' ]}
                         />
-                        <FieldArray name="cast" component={renderCasts}/>
+                        <FieldArray name="casts" component={renderCasts} validate={[validationRules.castsValidate]} data={[ 'Guitar', 'Cycling', 'Hiking' ]}/>
                         <Field
                             name="tarilerlink"
                             type="text"

@@ -62,6 +62,14 @@ a {
         border-color: #23b7e5;
     }
 }
+
+//helper classes
 .float_right {
     float:right;
+}
+.no_margin {
+    margin:0;
+}
+.mar_btm_15 {
+    margin-bottom:15px;
 }

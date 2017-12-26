@@ -17,3 +17,15 @@
   display: block;
   color: #a94442;
   margin-top: 5px; }
+  .input-error.custom_style {
+    margin: -10px 0 15px 0; }
+
+.form-group > label {
+  display: block; }
+
+.form-group .form-group {
+  width: 48%;
+  float: left;
+  margin: 0; }
+  .form-group .form-group:last-child {
+    float: right; }
