@@ -9,7 +9,7 @@ const renderDateTimePicker = ({
     placeholder,
     meta: { touched, error, warning }
 }) => (
-    <div className="form-group">
+    <div className="form-group clearfix">
         <label>{label}</label>
         <div>
             <DateTimePicker

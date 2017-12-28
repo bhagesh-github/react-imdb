@@ -8,6 +8,7 @@ import renderDateTimePicker from '../../components/feilds/datetimepicker';
 import RenderNumberPickerGroup from '../../components/feilds/numberpickergroup';
 import renderCasts from '../../components/movie/casts';
 import renderMultiSelect from '../../components/feilds/multiselect';
+import renderDropzoneInput from '../../components/feilds/dropzone';
 import Moment from 'moment';
 import momentLocalizer from 'react-widgets-moment';
 import 'react-widgets/dist/css/react-widgets.css';
@@ -82,6 +83,13 @@ class AddMovie extends Component {
                             data={[ 'Guitar', 'Cycling', 'Hiking' ]}
                         />
                         <FieldArray name="casts" component={renderCasts} validate={[validationRules.castsValidate]} data={[ 'Guitar', 'Cycling', 'Hiking' ]}/>
+                        <Field
+                            name="thumbnail"
+                            label="Movie poster"
+                            component={renderDropzoneInput}
+                            multiple="false"
+                            accept="image/jpeg, image/png"
+                        />
                         <Field
                             name="tarilerlink"
                             type="text"
