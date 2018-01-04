@@ -1,5 +1,5 @@
 import React from 'react';
-import NumberPicker from 'react-widgets/lib/NumberPicker';
+// import NumberPicker from 'react-widgets/lib/NumberPicker';
 import renderNumberPicker from './numberpicker';
 import { Field } from 'redux-form';
 

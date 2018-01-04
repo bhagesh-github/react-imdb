@@ -1,0 +1,7 @@
+export const TOGGLE_MENU = 'TOGGLE_MENU';
+export const ADD_MOVIE = 'ADD_MOVIE';
+export const ADD_MOVIE_SUCCESS = 'ADD_MOVIE_SUCCESS';
+export const ADD_MOVIE_ERROR = 'ADD_MOVIE_ERROR';
+export const GET_MOVIES = 'GET_MOVIES';
+export const GET_MOVIES_SUCCESS = 'GET_MOVIES_SUCCESS';
+export const GET_MOVIES_ERROR = 'GET_MOVIES_ERROR';

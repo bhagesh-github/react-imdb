@@ -5,10 +5,8 @@ import Header from  './components/header/header';
 import Sidebar from './components/sidebar/sidebar';
 import NotFound from './components/not-found/not-found';
 import Movies from './pages/movies/movies';
-import MoviesList from './pages/movies/movies-list';
 import Artists from './pages/artist/artists';
-import AddMovie from './pages/movies/add-movie';
-import * as LayoutAction from './actions/layout.action';
+import { toggleMenu } from './actions/layout.action';
 import './App.css';
 
 class App extends Component {
@@ -49,7 +47,7 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     changeToggleState: toggleState => {
-      dispatch(LayoutAction.toggleMenu(toggleState))
+      dispatch(toggleMenu(toggleState))
     }
   }
 }

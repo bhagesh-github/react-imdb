@@ -1,4 +1,4 @@
-import * as LayoutAction from '../actions/layout.action';
+import * as actions from '../actions/types';
 
 const initialState = {
     toggleState:'expanded'
@@ -6,7 +6,7 @@ const initialState = {
 
 export const LayoutReducer = (state=initialState,action) => {
     switch(action.type) {
-        case LayoutAction.TOGGLE_MENU:
+        case actions.TOGGLE_MENU:
             return {
                 ...state,
                 toggleState:action.payload

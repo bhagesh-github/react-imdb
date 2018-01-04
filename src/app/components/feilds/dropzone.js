@@ -1,7 +1,5 @@
-import React, { Component } from 'react';
-import { reduxForm, Field } from 'redux-form';
+import React from 'react';
 import Dropzone from 'react-dropzone';
-const FILE_FIELD_NAME = 'files';
 
 const renderDropzoneInput = ({
     input:{
@@ -10,7 +8,8 @@ const renderDropzoneInput = ({
     label,
     meta: { touched, error, warning },
     multiple,
-    accept
+    accept,
+    onDrop
 }) => {
   const files = value;
   return (
@@ -23,16 +22,25 @@ const renderDropzoneInput = ({
                 multiple={multiple === 'false' ? false : true }
                 accept={accept}
             >
-                <div>Try dropping some files here, or click to select files to upload.</div>
+                <div className="preview-image">
+                    {files && Array.isArray(files) && files.length === 1 && (
+                        <div>
+                        { files.map((file, i) => <div key={i}><img src={file.preview} alt=""/></div>) }
+                        </div>
+                    )}
+                    {files.length === 0 && (
+                        <img src="./assets/images/no-images-placeholder.png"/>
+                    )}
+                </div>
             </Dropzone>
             {touched &&
                 error &&
                 <span className="error">{error}</span>}
-            {files && Array.isArray(files) && (
-                <ul>
-                { files.map((file, i) => <li key={i}>{file.name}</li>) }
-                </ul>
-            )}
+                {files && Array.isArray(files) && files.length > 1  && (
+                    <ul>
+                    { files.map((file, i) => <li key={i}>{file.name}</li>) }
+                    </ul>
+                )}
         </div>
     </div>
   );

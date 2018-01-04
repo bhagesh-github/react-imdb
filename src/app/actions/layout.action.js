@@ -1,8 +1,8 @@
-export const TOGGLE_MENU = 'TOGGLE_MENU';
+import * as actions from './types';
 
 export const toggleMenu = (toggleState) => {
     return {
-        type:TOGGLE_MENU,
+        type:actions.TOGGLE_MENU,
         payload:toggleState
     }
 }

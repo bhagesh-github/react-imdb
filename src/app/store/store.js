@@ -1,14 +1,8 @@
-import { applyMiddleware, combineReducers, createStore } from 'redux';
-import { LayoutReducer } from '../reducers/layout.reducer';
+import { applyMiddleware, createStore } from 'redux';
 import { createEpicMiddleware } from 'redux-observable';
-import { reducer as formReducer } from 'redux-form';
-//import rootEpic from '../epics';
+import { REDUCERS } from '../reducers';
+import rootEpic from '../epics';
 
-const reducers = combineReducers({
-    layout: LayoutReducer,
-    form: formReducer
-})
+const epicMiddleware = createEpicMiddleware(rootEpic);
 
-//const epicMiddleware = createEpicMiddleware(rootEpic);
-
-export const store = createStore(reducers);
+export const store = createStore(REDUCERS,applyMiddleware(epicMiddleware));

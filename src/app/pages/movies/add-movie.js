@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PageTitle from '../../components/page-title/page-title';
 import { Field, FieldArray, reduxForm } from 'redux-form';
+import { connect } from 'react-redux';
 import * as validationRules from './validations';
 import simpleNumberLocalizer from 'react-widgets-simple-number';
 import renderField from '../../components/feilds/feild';
@@ -9,6 +10,7 @@ import RenderNumberPickerGroup from '../../components/feilds/numberpickergroup';
 import renderCasts from '../../components/movie/casts';
 import renderMultiSelect from '../../components/feilds/multiselect';
 import renderDropzoneInput from '../../components/feilds/dropzone';
+import { addMovie } from '../../actions/movie.action';
 import Moment from 'moment';
 import momentLocalizer from 'react-widgets-moment';
 import 'react-widgets/dist/css/react-widgets.css';
@@ -16,16 +18,17 @@ Moment.locale();
 momentLocalizer();
 simpleNumberLocalizer();
 class AddMovie extends Component {
-    addMovie = (values) => {
-       alert(JSON.stringify(values));
+    submitMovie = (values) => {
+       this.props.addNewMovie(values);
     }
     render() {
-        const { handleSubmit, pristine, reset, submitting, title } = this.props;
+        const { handleSubmit, pristine, submitting, title, movie:{movies} } = this.props;
         return(
+            
             <div>
                 <PageTitle title={title}/>
                 <div className="form-container">
-                    <form onSubmit={handleSubmit(this.addMovie)}>
+                    <form onSubmit={handleSubmit(this.submitMovie)}>
                         <Field
                             name="title"
                             type="text"
@@ -91,7 +94,7 @@ class AddMovie extends Component {
                             accept="image/jpeg, image/png"
                         />
                         <Field
-                            name="tarilerlink"
+                            name="trailerlink"
                             type="text"
                             component={renderField}
                             label="Movie trailer link"
@@ -107,6 +110,19 @@ class AddMovie extends Component {
     }
 }
 
-export default reduxForm({
+const mapStateToProps = (state) => {
+    return {
+        movie:state.movie
+    }
+}
+const mapDispatchToProps = (dispatch) => {
+    return {
+        addNewMovie:movie => dispatch(addMovie(movie))
+    }
+}
+
+const addMovieForm =  reduxForm({
     form:'addMovie'
 })(AddMovie);
+
+export default connect(mapStateToProps,mapDispatchToProps)(addMovieForm);
